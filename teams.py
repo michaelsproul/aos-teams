@@ -80,7 +80,7 @@ def max_p1_choose_p2_attackers(p1_d1, p1_a1, p1_a2, p1_d2, p2_d1, p2_a1, p2_a2, 
 def min_p2_choose_p1_attackers(p1_d1, p1_a1, p1_a2, p1_d2, p2_d1, p2_a1, p2_a2, p2_d2, min_f=min) -> ([(int, int)], int):
     matchups = [
         [(p1_d1, p2_a1), (p1_d2, p2_a2), (p1_a1, p2_d1), (p1_a2, p2_d2)],
-        [(p1_d1, p2_a1), (p1_d2, p2_a2), (p1_a2, p2_d1), (p1_d1, p2_d2)]
+        [(p1_d1, p2_a1), (p1_d2, p2_a2), (p1_a2, p2_d1), (p1_a1, p2_d2)]
     ]
     options = [(matchup, matchup_payoff(matchup)) for matchup in matchups]
     return min_f(options, key=lambda x: x[1])
