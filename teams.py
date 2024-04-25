@@ -1,21 +1,22 @@
 def transpose(array):
     return [[array[j][i] for j in range(0, len(array))] for i in range(0, len(array))]
 
-# Exiles Prime vs Exiles Alpha
-# Column 0: Tom, Stormcast
-# Column 1: Jasper, OBR
-# Column 2: Steve, Soulblight
-# Column 3: Brad, Gitz
+# Exiles Alpha first round
+# Column 0: Sylvaneth
+# Column 1: FEC
+# Column 2: Gitz
+# Column 3: Ogor Mawtribes
 payoffs = [
     # Row 0: Miles, Cities
-    [-1, 1, 1, 2],
+    [67, 33, 56, 43],
     # Row 1: Louis, Sylvaneth
-    [-2, -2, -2, 5],
+    [50, 31, 43, 47],
     # Row 2: Luis, STD
-    [-2, -2, -2, 5],
+    [52, 47, 47, 54],
     # Row 3: Michael, Big Waaagh
-    [1, 1, 1, 1]
+    [62, 45, 59, 58]
 ]
+payoffs = [[(win_rate * 20) // 100 for win_rate in row] for row in payoffs]
 # payoffs = transpose(payoffs)
 
 def matchup_payoff(matches: [(int, int)]) -> int:
